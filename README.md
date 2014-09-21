@@ -22,13 +22,15 @@ Quick set up guide
 	vagrant plugin install vagrant-cachier
 	vagrant plugin install vagrant-omnibus
 
+	# Configure /etc/hosts so that you can access the box from the host
+	sudo nano /etc/hosts
+	> 192.168.188.130 build.docs.typo3.dev
+
 	# Get the source
 	git clone git://git.typo3.org/Teams/Server/Vagrant/DocsTypo3Org.git
 
-	# Install Gem dependencies
-	cd DocsTypo3Org
-
 	# Fire up the Virtual Machine... this may take some time
+	cd DocsTypo3Org
 	vagrant up
 
 	# It could provisioning does not succeed at the first time.
@@ -41,10 +43,6 @@ Quick set up guide
 	# Alternatively, you can access through ssh
 	# The default username / password is vagrant / vagrant
 	ssh vagrant@192.168.156.131
-
-	# Configure /etc/hosts so that you can access the box from the host
-	sudo nano /etc/hosts
-	> 192.168.188.130 build.docs.typo3.dev
 
 	# Time to play with the application
 	sudo su - builddocstypo3org
